@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Gobble Run — Turkey Escape</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+    background: #2b1a12;
+    font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #wrap {
+    position: fixed; inset: 0; display: flex;
+    align-items: center; justify-content: center;
+  }
+  canvas {
+    display: block; touch-action: none;
+    background: #f7b267;
+  }
+  .touchbtn {
+    position: fixed; bottom: 18px; z-index: 5;
+    width: 84px; height: 84px; border-radius: 50%;
+    border: 3px solid rgba(255,255,255,.85);
+    background: rgba(60, 30, 10, .55); color: #fff;
+    font-size: 15px; font-weight: bold; font-family: inherit;
+    display: none; align-items: center; justify-content: center;
+    text-align: center; line-height: 1.1; cursor: pointer;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  }
+  .touchbtn:active { background: rgba(220, 120, 30, .8); }
+  #btnJump { right: 20px; }
+  #btnSlide { right: 118px; }
+  body.touch .touchbtn { display: flex; }
+  body.touch .touchbtn.hidden { display: none; }
+</style>
+</head>
+<body>
+<div id="wrap"><canvas id="game" width="960" height="540"></canvas></div>
+<button class="touchbtn" id="btnJump" type="button">JUMP<br>&#11014;</button>
+<button class="touchbtn" id="btnSlide" type="button">SLIDE<br>&#11015;</button>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
